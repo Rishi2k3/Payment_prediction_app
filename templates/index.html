@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Payment Prediction App{% endblock %}
+{% block content %}
+<h2>Payment Prediction App</h2>
+<form method="POST" action="/predict">
+    <div class="user-box">
+        <label for="perc">Percentage Premium Paid In Cash:</label>
+        <input type="number" name="perc" id="perc" min="0" max="1" step="0.01" required placeholder="0.25 (0-1)">
+    </div>
+    <div class="user-box">
+        <label for="age">Age In Days:</label>
+        <input type="number" name="age" id="age" min="5000" max="40000" required placeholder="e.g. 15000">
+    </div>
+    <div class="user-box">
+        <label for="income">Income:</label>
+        <input type="number" name="income" id="income" min="10000" max="10000000" required placeholder="e.g. 250000">
+    </div>
+    <div class="user-box">
+        <label for="count1">Count of 3-6 Months Late:</label>
+        <input type="number" name="count1" id="count1" min="0" max="12" required placeholder="0-12">
+    </div>
+    <div class="user-box">
+        <label for="count2">Count of 6-12 Months Late:</label>
+        <input type="number" name="count2" id="count2" min="0" max="12" required placeholder="0-12">
+    </div>
+    <div class="user-box">
+        <label for="count3">Count of More Than 12 Months Late:</label>
+        <input type="number" name="count3" id="count3" min="0" max="12" required placeholder="0-12">
+    </div>
+    <div class="user-box">
+        <label for="aus">Application Underwriting Score:</label>
+        <input type="number" name="aus" id="aus" min="90" max="100" step="0.01" required placeholder="90-100">
+    </div>
+    <div class="user-box">
+        <label for="nop">Number of Premiums Paid:</label>
+        <input type="number" name="nop" id="nop" min="1" max="60" required placeholder="1-60">
+    </div>
+    <div class="user-box-radio">
+        <label class="radio_label">Sourcing Channel:</label><br>
+        <input type="radio" id="A" name="s_channel" value="A" required><label class="radio_label" for="A">A</label> &nbsp;
+        <input type="radio" id="B" name="s_channel" value="B"><label class="radio_label" for="B">B</label> &nbsp;
+        <input type="radio" id="C" name="s_channel" value="C"><label class="radio_label" for="C">C</label> &nbsp;
+        <input type="radio" id="D" name="s_channel" value="D"><label class="radio_label" for="D">D</label> &nbsp;
+        <input type="radio" id="E" name="s_channel" value="E"><label class="radio_label" for="E">E</label>
+    </div>
+    <div class="user-box-radio">
+        <label class="radio_label">Residence Area:</label><br>
+        <input type="radio" id="Urban" name="r_area" value="Urban" required><label class="radio_label" for="Urban">Urban</label>
+        <input type="radio" id="Rural" name="r_area" value="Rural"><label class="radio_label" for="Rural">Rural</label>
+    </div>
+    <div class="user-guidance">
+        <p>All fields are required.</p>
+    </div>
+    <input type="submit" class="button" value="Predict">
+</form>
+{% endblock %}

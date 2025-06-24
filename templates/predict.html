@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Prediction Result{% endblock %}
+{% block content %}
+<div class="result-card">
+    <div class="result-icon">&#x2714;</div>
+    <h2>Prediction Result</h2>
+    <p class="prediction">{{ prediction }}</p>
+    <a href="/" class="button">Try Another Prediction</a>
+</div>
+{% endblock %}

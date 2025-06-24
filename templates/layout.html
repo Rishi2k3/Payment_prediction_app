@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Premium Default Prediction{% endblock %}</title>
+    <link rel="stylesheet" href="/static/index.css">
+    {% block head %}{% endblock %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 480px;
+            margin: 60px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+            padding: 40px 32px 32px 32px;
+        }
+        h1, h2, h3 {
+            color: #232526;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .flashes {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 18px;
+        }
+        .flashes li {
+            background: #ff5252;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html> 

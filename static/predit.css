@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+.result-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+    max-width: 500px;
+    margin: 120px auto 0 auto;
+    padding: 40px 30px 30px 30px;
+    text-align: center;
+}
+
+.result-card h2 {
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.prediction {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 32px 0 40px 0;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #03e9f4;
+    color: #141e30;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+.button:hover {
+    background: #fff;
+    color: #243b55;
+}
