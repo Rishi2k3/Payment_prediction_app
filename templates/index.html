@@ -2,7 +2,7 @@
 {% block title %}Payment Prediction App{% endblock %}
 {% block content %}
 <h2>Payment Prediction App</h2>
-<form method="POST" action="/predict">
+<form method="POST" action="{{ url_for('result') }}">
     <div class="user-box">
         <label for="perc">Percentage Premium Paid In Cash:</label>
         <input type="number" name="perc" id="perc" min="0" max="1" step="0.01" required placeholder="0.25 (0-1)">
